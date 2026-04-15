@@ -1,0 +1,110 @@
+.loading-container,
+.error-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 50px;
+  border-radius: 26px;
+
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* 🌈 Gradient Border Glow */
+.loading-container::before,
+.error-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  padding: 1px;
+  background: linear-gradient(135deg, #00feba, #5b9cff, #ff7eb3);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+}
+
+/* 🔄 Premium Spinner */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 20px;
+
+  background: conic-gradient(#00feba, #5b9cff, #ff7eb3, #00feba);
+  animation: spin 1.2s linear infinite;
+}
+
+/* Inner cut for donut effect */
+.spinner::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: rgba(15, 32, 39, 0.9);
+}
+
+/* ✨ Glow */
+.spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  filter: blur(12px);
+  background: inherit;
+  opacity: 0.6;
+}
+
+/* 🎬 Rotation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ❌ Error Icon */
+.error-icon {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+}
+
+/* 📝 Message */
+.error-message {
+  color: #ddd;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  max-width: 300px;
+}
+
+/* 🔘 Premium Button */
+.retry-btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #00feba, #5b9cff);
+  box-shadow: 0 6px 20px rgba(0, 254, 186, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect 🚀 */
+.retry-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 254, 186, 0.6);
+}
+
+/* Click */
+.retry-btn:active {
+  transform: scale(0.95);
+}

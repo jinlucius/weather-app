@@ -1,0 +1,60 @@
+.error-boundary-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.error-boundary-fallback .error-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.error-boundary-fallback h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.error-boundary-fallback details {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.error-boundary-fallback summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.error-boundary-fallback .retry-btn {
+  padding: 12px 24px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.error-boundary-fallback .retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  color: #666;
+}

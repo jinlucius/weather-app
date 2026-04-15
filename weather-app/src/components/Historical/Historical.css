@@ -1,0 +1,111 @@
+.historical {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* 💎 Glass Container */
+.date-range-selector {
+  position: relative;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 26px;
+  padding: 26px;
+  margin-bottom: 26px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* 🌈 Glow Border */
+.date-range-selector::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  padding: 1px;
+  background: linear-gradient(135deg, #00feba, #5b9cff, #ff7eb3);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0.5;
+}
+
+/* 📦 Input Wrapper */
+.range-input {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* 🏷️ Label */
+.range-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ddd;
+  letter-spacing: 0.5px;
+}
+
+/* 📅 Input Field */
+.range-input input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.range-input input:hover {
+  border-color: #5b9cff;
+}
+
+/* Focus */
+.range-input input:focus {
+  outline: none;
+  border-color: #00feba;
+  box-shadow: 0 0 12px rgba(0, 254, 186, 0.6);
+  transform: scale(1.02);
+}
+
+/* ❌ Error Box */
+.range-error {
+  background: rgba(255, 82, 82, 0.1);
+  color: #ff6b6b;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid rgba(255, 82, 82, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* 🎬 Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .date-range-selector {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .range-input input {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
